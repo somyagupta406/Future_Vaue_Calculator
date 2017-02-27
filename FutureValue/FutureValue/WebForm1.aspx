@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="WebForm1.aspx.cs" Inherits="FutureValue.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="FutureValue.WebForm1" Codebehind="WebForm1.aspx.cs" %>
 
 <!DOCTYPE html>
 
@@ -23,12 +23,12 @@
     </style>
 </head>
 <body>
-    
+    <img alt="" class="auto-style1" src="Images/coollogo_com-7019187.gif"/>
+        <h1>401K Future Value Calculator</h1>
     <form id="form1" runat="server">
     <div>
     
-        <img alt="" class="auto-style1" src="Images/coollogo_com-7019187.gif"/></div>
-        <h1>401K Future Value Calculator</h1>
+        
         <table class="auto-style3">
             <tr>
                 <td class="auto-style2">Monthly Investment</td>
@@ -40,19 +40,19 @@
             <tr>
                 <td class="auto-style2">Annual Interest Rate</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtAnnualInterestRate" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtAnnualInterestRate" runat="server">6.0</asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Number of Years</td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtNumberOfYears" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNumberOfYears" runat="server">10</asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Future Value</td>
+                <td class="auto-style2">Future Valueue</td>
                 <td class="auto-style4">
-                    <asp:Label ID="lblFutureValue" runat="server" Text="lblFutureValue"></asp:Label>
+                    <asp:Label ID="lblFutureValue" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -61,10 +61,10 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Button ID="btnCalculate" runat="server" Text="Caculate" />
+                    <asp:Button ID="btnCalculate" runat="server" Text="Caculate" OnClick="btnCalculate_Click" />
                 </td>
                 <td class="auto-style4">
-                    <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                    <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
                 </td>
             </tr>
         </table>
@@ -73,6 +73,7 @@
         <br />
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" BackColor="#CC0000" ControlToValidate="txtNumberOfYears" Display="Dynamic" ErrorMessage="Number of Years is required." ForeColor="Yellow"></asp:RequiredFieldValidator>
         <asp:RangeValidator ID="RangeValidator2" runat="server" BackColor="White" ControlToValidate="txtNumberOfYears" Display="Dynamic" ErrorMessage="Years must range from 1 to 45." ForeColor="#6600FF" MaximumValue="45" MinimumValue="1" Type="Integer"></asp:RangeValidator>
+        </div>
     </form>
 </body>
 </html>
